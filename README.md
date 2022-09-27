@@ -49,9 +49,9 @@ Estimate of time needed to complete: 30 min
 
 Start time: 4:10
 
-Finish time: _____
+Finish time: 5:40
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1.5 hr
 
 ### Error Messages
 
