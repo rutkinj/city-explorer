@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import Container from "react-bootstrap/Container";
+import CityShowcase from "./CityShowcase";
 
 class App extends React.Component {
   constructor(props){
@@ -29,18 +31,18 @@ class App extends React.Component {
   render(){
     return (
       <>
-        <input
-          onChange={this.handleInput}
-          placeholder="enter city here"
-        ></input>
-        <button onClick={this.handleSearch}>Explore!</button>
-        {this.state.location.display_name && (
-          <>
-            <h2>The city is {this.state.location.display_name}</h2>
-            <h3>Latitude: {this.state.location.lat}</h3>
-            <h3>Longitude: {this.state.location.lon}</h3>
-          </>
-        )}
+        <Container>
+          <input
+            onChange={this.handleInput}
+            placeholder="enter city here"
+            ></input>
+          <button onClick={this.handleSearch}>Explore!</button>
+          {this.state.location.display_name && (
+            <>
+              <CityShowcase city={this.state.location}/>
+            </>
+          )}
+        </Container>
       </>
     );
   }

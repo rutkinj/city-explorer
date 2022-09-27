@@ -18,7 +18,8 @@
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+
+Worked with Maximo and Mahad on the whiteboard.
 
 ## Features
 
@@ -26,27 +27,27 @@
 
 Estimate of time needed to complete: 15 min
 
-Start time: _____
+Start time: 1:45
 
-Finish time: _____
+Finish time: 2:00
 
-Actual time needed to complete: _____
+Actual time needed to complete: 15 min
 
 ### Get Location
 
 Estimate of time needed to complete: 1 hr?
 
-Start time: _____
+Start time: 3:30
 
-Finish time: _____
+Finish time: 4:06
 
-Actual time needed to complete: _____
+Actual time needed to complete: 36 min
 
 ### Get Map
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 30 min
 
-Start time: _____
+Start time: 4:10
 
 Finish time: _____
 
