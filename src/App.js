@@ -1,8 +1,9 @@
 import React from "react";
 import axios from "axios";
-import Container from "react-bootstrap/Container";
+import {Container, Form, Button} from "react-bootstrap";
 import CityShowcase from "./CityShowcase";
 import ErrorAlert from "./ErrorAlert";
+import Weather from "./Weather";
 
 class App extends React.Component {
   constructor(props){
@@ -12,6 +13,7 @@ class App extends React.Component {
       location: {},
       error: false,
       errorMessage: '',
+      weather: [],
     }
   }
   
@@ -22,31 +24,45 @@ class App extends React.Component {
   handleSearch = async (e) => {
     e.preventDefault();
     this.setState({
-        searchQuery: '',
         location: {},
         error: false,
         errorMessage: '',
+        weather: [],
       })
     try{
       let API = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATION_IQ_KEY}&q=${this.state.searchQuery}&format=json`;
       let getResponse = await axios.get(API);
       this.setState({location: getResponse.data[0]});
+      this.handleWeather(getResponse.data[0].lat,getResponse.data[0].lon)
     } catch (error){
       console.log('Error y\'all: ', error.message);
       this.setState({error: true, errorMessage: error.message})
     }
+  }
 
+  handleWeather = async (lat,lon) => {
+    try {
+      let weatherResponse = await axios.get(
+        `http://localhost:3001/weather?searchQuery=${this.state.searchQuery}&lat=${lat}&lon=${lon}`
+      );
+      this.setState({weather: weatherResponse.data});
+    } catch (error) {
+      console.log('Got an error: ', error.message)
+      this.setState({ error: true, errorMessage: error.message });
+    }
   }
 
   render(){
     return (
       <>
         <Container>
-          <input
-            onChange={this.handleInput}
-            placeholder="enter city here"
+          <Form className="mt-3">
+            <input
+              onChange={this.handleInput}
+              placeholder="enter city here"
             ></input>
-          <button onClick={this.handleSearch}>Explore!</button>
+            <Button onClick={this.handleSearch}>Explore!</Button>
+          </Form>
           {this.state.error && (
             <>
               <ErrorAlert errorMessage={this.state.errorMessage} />
@@ -54,9 +70,13 @@ class App extends React.Component {
           )}
           {this.state.location.display_name && (
             <>
-              <CityShowcase city={this.state.location}/>
+              <CityShowcase city={this.state.location} />
             </>
           )}
+          {this.state.weather &&
+            this.state.weather.map((data) => (
+              <Weather weatherData={data} />
+            ))}
         </Container>
       </>
     );

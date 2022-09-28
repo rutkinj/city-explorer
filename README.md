@@ -62,3 +62,33 @@ Start time: 5:45
 Finish time: 5:58
 
 Actual time needed to complete: 13 min
+
+### Setup Server Repo
+
+Estimate of time needed to complete: 10 min
+
+Start time: 1:58
+
+Finish time: 2:12
+
+Actual time needed to complete: 14 min
+
+### Weather (placeholder)
+
+Estimate of time needed to complete: 2 hr
+
+Start time: 2:20
+
+Finish time: 4:30
+
+Actual time needed to complete: 2hr 10min
+
+### Error Messages MKII
+
+Estimate of time needed to complete: 30 min
+
+Start time: 5:00
+
+Finish time: 5:27
+
+Actual time needed to complete: 27 min
