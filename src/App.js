@@ -4,6 +4,7 @@ import {Container, Form, Button} from "react-bootstrap";
 import CityShowcase from "./CityShowcase";
 import ErrorAlert from "./ErrorAlert";
 import Weather from "./Weather";
+import MovieDisp from "./MovieDisp"
 
 class App extends React.Component {
   constructor(props){
@@ -28,12 +29,15 @@ class App extends React.Component {
         error: false,
         errorMessage: '',
         weather: [],
+        movies: [],
       })
+
     try{
       let API = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATION_IQ_KEY}&q=${this.state.searchQuery}&format=json`;
       let getResponse = await axios.get(API);
       this.setState({location: getResponse.data[0]});
       this.handleWeather(getResponse.data[0].lat,getResponse.data[0].lon)
+      this.handleMovies(this.state.searchQuery)
     } catch (error){
       console.log('Error y\'all: ', error.message);
       this.setState({error: true, errorMessage: error.message})
@@ -45,10 +49,20 @@ class App extends React.Component {
       let weatherResponse = await axios.get(
         `http://localhost:3001/weather?searchQuery=${this.state.searchQuery}&lat=${lat}&lon=${lon}`
       );
+      // console.log(weatherResponse);
       this.setState({weather: weatherResponse.data});
     } catch (error) {
       console.log('Got an error: ', error.message)
       this.setState({ error: true, errorMessage: error.message });
+    }
+  }
+
+  handleMovies = async (loc) => {
+    try{
+      let movieResponse = await axios.get(`http://localhost:3001/movies?searchQuery=${loc}`)
+      this.setState({movies: movieResponse.data});
+    } catch (error){
+      console.log('bingbong whoopsy')
     }
   }
 
@@ -76,7 +90,11 @@ class App extends React.Component {
           {this.state.weather &&
             this.state.weather.map((data) => (
               <Weather weatherData={data} />
-            ))}
+          ))}
+          {this.state.movies &&
+            this.state.movies.map((data) => (
+              <MovieDisp movieData={data} />
+          ))}
         </Container>
       </>
     );
