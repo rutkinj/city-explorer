@@ -16,6 +16,7 @@ class App extends React.Component {
       errorMessage: '',
       weather: [],
       server: 'https://rutkinj-city-explorer.herokuapp.com'
+      // server: 'http://localhost:3001'
     }
   }
 
