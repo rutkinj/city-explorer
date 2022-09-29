@@ -8,13 +8,17 @@ class Weather extends React.Component{
     return (
       <>
         <OverlayTrigger
+          key={this.props.weatherData.id}
           trigger="click"
           placement={"right"}
           overlay={
             <Popover>
-              <Popover.Header as="h3">{this.props.weatherData.date}</Popover.Header>
-              <Popover.Body>
+              <Popover.Header as="h3">
                 {this.props.weatherData.desc}
+              </Popover.Header>
+              <Popover.Body>
+                <p>Hi-Temp: {this.props.weatherData.max} °F</p>
+                <p>Lo-Temp: {this.props.weatherData.min} °F</p>
               </Popover.Body>
             </Popover>
           }
