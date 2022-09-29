@@ -92,3 +92,33 @@ Start time: 5:00
 Finish time: 5:27
 
 Actual time needed to complete: 27 min
+
+### Weather API
+
+Estimate of time needed to complete: 1 hr
+
+Start time: 1:45
+
+Finish time: 4:00
+
+Actual time needed to complete: 2 hr 15 min
+
+### Movies API
+
+Estimate of time needed to complete: 2 hr
+
+Start time: 4:10
+
+Finish time: 6:17
+
+Actual time needed to complete: 2 hr 7 min
+
+### Heroku Deploy
+
+Estimate of time needed to complete: 30 min
+
+Start time: 6:30
+
+Finish time: 6:56
+
+Actual time needed to complete: 26 min
