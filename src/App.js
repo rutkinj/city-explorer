@@ -15,9 +15,10 @@ class App extends React.Component {
       error: false,
       errorMessage: '',
       weather: [],
+      server: 'https://rutkinj-city-explorer.herokuapp.com'
     }
   }
-  
+
   handleInput = (e) => {
     this.setState({searchQuery: e.target.value})
   }
@@ -47,7 +48,7 @@ class App extends React.Component {
   handleWeather = async (lat,lon) => {
     try {
       let weatherResponse = await axios.get(
-        `http://localhost:3001/weather?searchQuery=${this.state.searchQuery}&lat=${lat}&lon=${lon}`
+        `${this.state.server}/weather?searchQuery=${this.state.searchQuery}&lat=${lat}&lon=${lon}`
       );
       // console.log(weatherResponse);
       this.setState({weather: weatherResponse.data});
@@ -59,7 +60,7 @@ class App extends React.Component {
 
   handleMovies = async (loc) => {
     try{
-      let movieResponse = await axios.get(`http://localhost:3001/movies?searchQuery=${loc}`)
+      let movieResponse = await axios.get(`${this.state.server}/movies?searchQuery=${loc}`)
       this.setState({movies: movieResponse.data});
     } catch (error){
       console.log('bingbong whoopsy')
