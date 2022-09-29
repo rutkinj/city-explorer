@@ -4,18 +4,15 @@
 **Version**: 1.0.0
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+
+This applications purpose is to display some info based around a particular city. If you want to know about a location, this app will give you a map of the area, a seven day weather forecast, and movies relevent to the city.
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
+It is currently hosted on the web, just follow the link and search away!
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
-
-## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 ## Credit and Collaborations
 
@@ -122,3 +119,23 @@ Start time: 6:30
 Finish time: 6:56
 
 Actual time needed to complete: 26 min
+
+### Modularize Backend
+
+Estimate of time needed to complete: 30 min
+
+Start time: 12:30
+
+Finish time: 12:46
+
+Actual time needed to complete: 16 min
+
+### Componentize Frontend
+
+Estimate of time needed to complete: 0 min
+
+Start time: 12:46
+
+Finish time: 12:46
+
+Actual time needed to complete: Unknown minutes over the past four days.
