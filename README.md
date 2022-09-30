@@ -139,3 +139,13 @@ Start time: 12:46
 Finish time: 12:46
 
 Actual time needed to complete: Unknown minutes over the past four days.
+
+### Cache
+
+Estimate of time needed to complete: 1 hr
+
+Start time: 1:30
+
+Finish time: 2:35
+
+Actual time needed to complete: 1 hr 5 min
